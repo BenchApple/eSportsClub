@@ -27,22 +27,55 @@ def initElo():
     # Return the list of elos as well as the file object that accesses the elos.
     return[elos, eloFile]
 
-# Creates a matrix of the matches that happened in a given tourney. Make sure to enter the matches in chronological order. 
-# The first number entered is the winner of the match. Reference the list of names to see the indices of each person.
-# If I can figure out a better way to do this in the future I most certainly will use that.
-# The matches are read in as a collection, aka a point, where the first one is known as winner and the second one is known as loser.
-def createMatchesMatrix(matches, names):
-    # Create a matrix of zeros to store the matches
-    matchMatrix = [[0 for j in range(0,len(names))] for i in range(0, len(names))]
+def initMatches():
+    # Open the file that stores all of the matches. Matches are stored across pairs of lines, where the first line is the winner of the match, and the second is the loser of the match.
+    matchFile = open("matches.txt", "r+")
+    matches = matchFile.readlines()
 
+    # Remove the \n from each of the names in the match.
+    for i in range(0, len(matches)):
+        matches[i] = int(matches[i][:len(matches[i])-1])
+
+    return [matches, matchFile]
+
+def getMatches(matches, names):
+    matchList = []
+    # Create a point object type to store the matches, where x is the winner and y is the loser.
+    Point = collections.namedtuple("Point", ["x", "y"])
+
+    # Put the matches into the list of matches.
+    for i in range(0, len(matches), 2):
+        winner = names.index(matches[i])
+        loser = names.index(matches[i+1])
+        match = Point(winner, y=loser)
+        matchList.append(match)
+
+    return matchList
+
+def recalcElo(matches, elos, k):
     for match in matches:
-        matchMatrix[match.winner][match.loser] += 1
+        # Store these for easy access
+        eloWinner = elos[match.x]
+        eloLoser = elos[match.y]
 
-    return matchMatrix
+        # Calculate the likelihood of success for both the winner and the loser
+        expectedForWinner = expectedScore(eloWinner, eloLoser)
+        expectedForLoser = expectedScore(eloLoser, eloWinner)
 
-def getMatches():
-    matches = []
-    Point = collections.namedtuple("Point", ["winner", "loser"])
+        # Calculate the new elo of both the winner and the loser
+        newEloWinner = eloWinner + (k * (1 - expectedForWinner))
+        newEloLoser = eloLoser + (k * (0 - expectedForLoser))
+
+        # Set the new elos
+        elos[match.x] = newEloWinner
+        elos[match.y] = newEloLoser
+
+    return elos
+
+# Calculate the expected winning percentage of each of the players
+def expectedScore(playerElo, opponentElo):
+    bottom = 1 + (10 ** ((opponentElo - playerElo) / 400))
+    return 1 / bottom
 
 def main():
     # Get initialized name stuff.
@@ -55,3 +88,18 @@ def main():
     elos = elo[0]
     eloFile = elo[1]
 
+    # Get initialized match stuff.
+    match = initMatches()
+    matches = match[0]
+    matchFile = match[1]
+
+    # Create the list of matches.
+    matchList = getMatches(matches, names)
+
+    # Match Matrix does not work. It takes the matches out of order, which would mess with the ELO calculations for large batches of tourney results.
+
+    # K measures the volatility of the elo. As it stands, 30 is pretty volatile, might consider changing it back down to something like 20 or 15, but it is probably a good idea to keep it large with how small the data set is.
+    k = 30
+    elos = recalcElo(matchList, elos, k)
+
+    print (elos)
