@@ -27,6 +27,13 @@ def initElo():
     # Return the list of elos as well as the file object that accesses the elos.
     return[elos, eloFile]
 
+def updateElo(elos, eloFile):
+    # Remove all of the old elos from the file.
+    eloFile.truncate(0)
+
+    for elo in elos:
+        eloFile.write(str(elo) + "\n")
+
 def initMatches():
     # Open the file that stores all of the matches. Matches are stored across pairs of lines, where the first line is the winner of the match, and the second is the loser of the match.
     matchFile = open("matches.txt", "r+")
@@ -102,4 +109,9 @@ def main():
     k = 30
     elos = recalcElo(matchList, elos, k)
 
-    print (elos)
+    # Put the updated elos back into the file they came from.
+    updateElo(elos, eloFile)
+
+    nameFile.close()
+    eloFile.close()
+    matchFile.close()
