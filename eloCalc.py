@@ -22,14 +22,15 @@ def initElo():
 
     # Remove the \n from each of the elos (stored as strings) and convert it to an integer.
     for i in range(0, len(elos)):
-        elos[i] = int(elos[i][:len(elos[i])-1])
+        elos[i] = float(int(elos[i][:len(elos[i])-1]))
 
     # Return the list of elos as well as the file object that accesses the elos.
     return[elos, eloFile]
 
 def updateElo(elos, eloFile):
     # Remove all of the old elos from the file.
-    eloFile.truncate(0)
+    eloFile.seek(0)
+    eloFile.truncate()
 
     for elo in elos:
         eloFile.write(str(elo) + "\n")
@@ -41,7 +42,7 @@ def initMatches():
 
     # Remove the \n from each of the names in the match.
     for i in range(0, len(matches)):
-        matches[i] = int(matches[i][:len(matches[i])-1])
+        matches[i] = matches[i][:len(matches[i])-1]
 
     return [matches, matchFile]
 
@@ -70,8 +71,8 @@ def recalcElo(matches, elos, k):
         expectedForLoser = expectedScore(eloLoser, eloWinner)
 
         # Calculate the new elo of both the winner and the loser
-        newEloWinner = eloWinner + (k * (1 - expectedForWinner))
-        newEloLoser = eloLoser + (k * (0 - expectedForLoser))
+        newEloWinner = eloWinner + (float(k) * (1.0 - expectedForWinner))
+        newEloLoser = eloLoser + (float(k) * (0.0 - expectedForLoser))
 
         # Set the new elos
         elos[match.x] = newEloWinner
@@ -81,8 +82,8 @@ def recalcElo(matches, elos, k):
 
 # Calculate the expected winning percentage of each of the players
 def expectedScore(playerElo, opponentElo):
-    bottom = 1 + (10 ** ((opponentElo - playerElo) / 400))
-    return 1 / bottom
+    bottom = 1.0 + (10.0 ** ((float(opponentElo) - float(playerElo)) / 400.0))
+    return 1.0 / float(bottom)
 
 def main():
     # Get initialized name stuff.
@@ -115,3 +116,6 @@ def main():
     nameFile.close()
     eloFile.close()
     matchFile.close()
+
+if __name__ == "__main__":
+    main()
