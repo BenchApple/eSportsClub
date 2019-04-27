@@ -46,6 +46,9 @@ Ben Chappell
 Neo Zhou
 Ben Chappell
 Jarvis
+
+-- End of First Tourney (Dec) --
+
 Neo Zhou
 David Wang
 Owen Bennett
@@ -92,6 +95,64 @@ Ben Chappell
 Owen Bennett
 Neo Zhou
 Ben Chappell
+
+-- End of Second Tourney (Jan)--
+
+Jakob Nickels
+Dylan Evans
+Ben Chappell
+Jakob Drexler
+Charles McCall
+Drasler
+Neo Zhou
+Owen Brown
+Ben Chappell
+Dylan Evans
+Jakob Nickels
+Jakob Drexler
+Drasler
+Owen Brown
+Neo Zhou
+Charles McCall
+Dylan Evans
+Jakob Drexler
+Jakob Nickels
+Ben Chappell
+Neo Zhou
+Drasler
+Charles McCall
+Owen Brown
+Jakob Nickels
+Owen Brown
+Ben Chappell
+Drasler
+Charles McCall
+Dylan Evans
+Neo Zhou
+Jakob Drexler
+Drasler
+Owen Brown
+Dylan Evans
+Jakob Drexler
+Jakob Nickels
+Ben Chappell
+Neo Zhou
+Charles McCall
+Ben Chappell
+Dylan Evans
+Charles McCall
+Drasler
+Ben Chappell
+Charles McCall
+Jakob Nickles
+Neo Zhou
+Ben Chappell
+Neo Zhou
+Jakob Nickels
+Ben Chappell
+
+-- End of Online Tourney (2/11) -- 
+
 Lamarr
 Luke Remig
 Zach M
@@ -204,3 +265,120 @@ Danil
 Ben Chappell
 Kevin Wang
 Danil
+
+-- End of Third Tourney (4/4) --
+
+Lamarr
+Tariq V
+Alex A
+Jon Fackler
+Jarvis
+Robert
+Trevor McDaniel
+Neo Zhou
+Ethan Hoffman
+Yaniel
+Zach M
+Luke G
+Luke Remig
+Luca Correll
+Connor L
+Joseph Riddick
+Charles McCall
+Max Potter
+Dylan Evans
+Vaughn
+Logan L
+Ivy
+Richard Cheng
+Nathanael Marengo
+Ethan Cooper
+Hunter Stevens
+Robert
+Jon Fackler
+Neo Zhou
+Yaniel
+Luca Correll
+Luke G
+Max Potter
+Vaughn
+Nathanael Marengo
+Hunter Stevens
+Kevin Wang
+Lamarr
+Jarvis
+Alex A
+Ethan Hoffman
+Trevor McDaniel
+Zach M
+Luke Remig
+Ben Chappell
+Connor L
+Charles McCall
+Dylan Evans
+Jakob Nickels
+Logan L
+Richard Cheng
+Ethan Cooper
+Lamarr
+Nathanael Marengo
+Alex A
+Ivy
+Trevor McDaniel
+Max Potter
+Luke Remig
+Joseph Riddick
+Connor L
+Luca Correll
+Neo Zhou
+Dylan Evans
+Robert
+Logan L
+Ethan Cooper
+Tariq V
+Alex A
+Lamarr
+Luke Remig
+Trevor McDaniel
+Connor L
+Neo Zhou
+Robert
+Ethan Cooper
+Jarvis
+Kevin Wang
+Zach M
+Ethan Hoffman
+Ben Chappell
+Charles McCall
+Jakob Nickels
+Richard Cheng
+Kevin Wang
+Connor L
+Ethan Hoffman
+Robert
+Charles McCall
+Alex A
+Luke Remig
+Richard Cheng
+Kevin Wang
+Ethan Hoffman
+Charles McCall
+Luke Remig
+Jarvis
+Zach M
+Ben Chappell
+Jakob Nickels
+Zach M
+Charles McCall
+Kevin Wang
+Jakob Nickels
+Kevin Wang
+Zach M
+Jarvis
+Kevin Wang
+Jarvis
+Ben Chappell
+Ben Chappell
+Jarvis
+
+-- End of Fourth Tourney (4/24) --
