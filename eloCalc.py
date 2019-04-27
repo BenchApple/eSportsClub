@@ -17,7 +17,7 @@ def initNames():
 
 # Initializes the list of ELOs
 def initElo():
-    eloFile = open("elo.txt", "r+")
+    eloFile = open("startingElo.txt", "r+")
     elos = eloFile.readlines()
 
     # Remove the \n from each of the elos (stored as strings) and convert it to an integer.
@@ -36,15 +36,27 @@ def updateElo(elos, eloFile):
         eloFile.write(str(elo) + "\n")
 
 def initMatches():
-    # Open the file that stores all of the matches. Matches are stored across pairs of lines, where the first line is the winner of the match, and the second is the loser of the match.
-    matchFile = open("matches.txt", "r+")
-    matches = matchFile.readlines()
+    # Create a list storing all of the current match files.
+    matchFilesPre = ["matchesDec.txt", "matchesJan.txt", "matches211.txt", "matches44.txt", "matches424.txt"]
+
+    # Open the files that store all of the matches. Matches are stored across pairs of lines, where the first line is the winner of the match, and the second is the loser of the match.
+    matchFiles = []
+    matches = []
+    for i in range(0, len(matchFilesPre)):
+        matchFiles.append(open(matchFilesPre[i], "r+"))
+
+        # Append each of the matches in matches by iterating through the lists produced by the files.
+        for j in matchFiles[i].readlines():
+            matches.append(j)
+    
+    #matchFile = open("matches.txt", "r+")
+    #matches = matchFile.readlines()
 
     # Remove the \n from each of the names in the match.
     for i in range(0, len(matches)):
         matches[i] = matches[i][:len(matches[i])-1]
 
-    return [matches, matchFile]
+    return [matches, matchFiles]
 
 def getMatches(matches, names):
     matchList = []
@@ -95,11 +107,12 @@ def main():
     elo = initElo()
     elos = elo[0]
     eloFile = elo[1]
+    eloFile = open("elo.txt", "r+")
 
     # Get initialized match stuff.
     match = initMatches()
     matches = match[0]
-    matchFile = match[1]
+    matchFiles = match[1]
 
     # Create the list of matches.
     matchList = getMatches(matches, names)
@@ -107,7 +120,7 @@ def main():
     # Match Matrix does not work. It takes the matches out of order, which would mess with the ELO calculations for large batches of tourney results.
 
     # K measures the volatility of the elo. As it stands, 30 is pretty volatile, might consider changing it back down to something like 20 or 15, but it is probably a good idea to keep it large with how small the data set is.
-    k = 30
+    k = 100
     elos = recalcElo(matchList, elos, k)
 
     # Put the updated elos back into the file they came from.
@@ -115,7 +128,8 @@ def main():
 
     nameFile.close()
     eloFile.close()
-    matchFile.close()
+    for i in matchFiles:
+        i.close()
 
 if __name__ == "__main__":
     main()
