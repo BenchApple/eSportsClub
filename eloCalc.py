@@ -117,7 +117,7 @@ def main():
     # Match Matrix does not work. It takes the matches out of order, which would mess with the ELO calculations for large batches of tourney results.
 
     # K measures the volatility of the elo. As it stands, 30 is pretty volatile, might consider changing it back down to something like 20 or 15, but it is probably a good idea to keep it large with how small the data set is.
-    k = 100
+    k = 60
     elos = recalcElo(matchList, elos, k)
 
     # Put the updated elos back into the file they came from.
