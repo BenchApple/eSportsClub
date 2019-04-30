@@ -48,9 +48,6 @@ def initMatches():
         # Append each of the matches in matches by iterating through the lists produced by the files.
         for j in matchFiles[i].readlines():
             matches.append(j)
-    
-    #matchFile = open("matches.txt", "r+")
-    #matches = matchFile.readlines()
 
     # Remove the \n from each of the names in the match.
     for i in range(0, len(matches)):

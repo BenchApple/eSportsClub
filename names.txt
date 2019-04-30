@@ -23,17 +23,8 @@ Jon Fackler
 Joseph Riddick
 Kevin Wang
 Lamarr
-<<<<<<< HEAD
-<<<<<<< HEAD
 Logan L
-Luca Correll 
-=======
-Logan Lahouchuc
-=======
-Logan L
->>>>>>> 1f54490b7985b92fd14663f6481acf1a9faf1f4c
 Luca Correll
->>>>>>> cb23be7b2499fae6895882473303f854efbe181a
 Luke G
 Luke Remig
 Luke Wang
@@ -48,11 +39,7 @@ Owen Brown
 Patrick G
 Paul D
 Richard Cheng
-<<<<<<< HEAD
-Roberto
-=======
 Robert
->>>>>>> cb23be7b2499fae6895882473303f854efbe181a
 Shawn
 Tariq V
 Trevor McDaniel
