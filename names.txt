@@ -7,6 +7,7 @@ Chate
 Connor L
 Danil
 David Wang
+Drasler
 Dylan Evans
 Ethan Cooper
 Ethan Hoffman
@@ -14,7 +15,8 @@ Gage
 Hamza
 Henry Norcross
 Hunter Stevens
-Ivy Z
+Ivy
+Jakob Drexler
 Jakob Nickels
 Jarvis
 Jon Fackler
@@ -22,10 +24,14 @@ Joseph Riddick
 Kevin Wang
 Lamarr
 <<<<<<< HEAD
+<<<<<<< HEAD
 Logan L
 Luca Correll 
 =======
 Logan Lahouchuc
+=======
+Logan L
+>>>>>>> 1f54490b7985b92fd14663f6481acf1a9faf1f4c
 Luca Correll
 >>>>>>> cb23be7b2499fae6895882473303f854efbe181a
 Luke G
