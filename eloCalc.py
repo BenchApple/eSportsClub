@@ -22,7 +22,7 @@ def initElo():
 
     # Remove the \n from each of the elos (stored as strings) and convert it to an integer.
     for i in range(0, len(elos)):
-        elos[i] = float(int(elos[i][:len(elos[i])-1]))
+        elos[i] = float((elos[i][:len(elos[i])-1]))
 
     # Return the list of elos as well as the file object that accesses the elos.
     return[elos, eloFile]

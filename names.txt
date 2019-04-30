@@ -7,7 +7,7 @@ Chate
 Connor L
 Danil
 David Wang
-Dylan E
+Dylan Evans
 Ethan Cooper
 Ethan Hoffman
 Gage
@@ -21,8 +21,13 @@ Jon Fackler
 Joseph Riddick
 Kevin Wang
 Lamarr
+<<<<<<< HEAD
 Logan L
 Luca Correll 
+=======
+Logan Lahouchuc
+Luca Correll
+>>>>>>> cb23be7b2499fae6895882473303f854efbe181a
 Luke G
 Luke Remig
 Luke Wang
@@ -37,12 +42,16 @@ Owen Brown
 Patrick G
 Paul D
 Richard Cheng
+<<<<<<< HEAD
 Roberto
+=======
+Robert
+>>>>>>> cb23be7b2499fae6895882473303f854efbe181a
 Shawn
 Tariq V
 Trevor McDaniel
 Tuan B
 Vaughn
 Wolfgang V
-Yaniel 
+Yaniel
 Zach M
